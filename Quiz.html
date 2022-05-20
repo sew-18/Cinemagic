@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+
+<title> Cinemagic Quiz </title>
+<link href ="Quiz.css" rel="stylesheet">
+<script src="Quiz.js"></script>
+
+
+</head>
+
+<body>
+<!-- navigation bar -->
+<div class="navibar" id="navbar">
+
+ <div class="navicontent">
+
+  <a href="home.html">HOME</a>
+  <a href="movies.html">MOVIES</a>
+  <a href="Quiz.html">QUIZ</a>
+  <a href="contactus.html">CONTACT US</a>
+  <a href="aboutus.html">ABOUT US</a>
+   <div  class="shop">
+  <a href="store.html">STORE</a>
+  </div>
+  </div>
+  <div>
+    <a href="home.html"><img class="logo center"src="logo.png"  width="130" ></a>
+  </div>
+</div>
+<div id = "mycolour"> <!-- to change the page color-->
+
+<a name="top"></a> <!-- for the anchor -->
+<h1> WELCOME TO THE QUIZ ! </h1> <!-- Heading-->
+<hr>
+
+<div id="count"></div>
+<form id = "quiz" name="quiz">
+
+<!--Questions and answers -->
+
+<p>1. How many movies did Christian Bale play Batman ? </p>
+<input type="radio" id"mc" name="question1" value="2"> 2<br>
+<input type="radio" id"mc" name="question1" value="3"> 3<br>
+<input type="radio" id"mc" name="question1" value="4"> 4<br>
+<input type="radio" id"mc" name="question1" value="1"> 1<br>
+
+<p>2. Who played Sam Coleman in Godzilla: King of the Monsters ? </p>
+<input type="radio" id"mc" name="question2" value="Chris Evans"> Chris Evans<br>
+<input type="radio" id"mc" name="question2" value="Kyle Chandler"> Kyle Chandler<br>
+<input type="radio" id"mc" name="question2" value="Thomas Middleditch"> Thomas Middleditch<br>
+<input type="radio" id"mc" name="question2" value="Jeremy Renner"> Jeremy Renner<br>
+
+<p>3. Who is the director of Insterseller ?</p>
+<input type="radio" id"mc" name="question3" value="James Cameron"> James Cameron<br>
+<input type="radio" id"mc" name="question3" value="Russo Brothers"> Russo Brothers<br>
+<input type="radio" id"mc" name="question3" value="Zach Snyder"> Zach Snyder<br>
+<input type="radio" id"mc" name="question3" value="Christorpher Nolan"> Christopher Nolan<br>
+
+<p>4. Who played Mark Zuckerberg in the Social Network ?</p>
+<input type="radio" id"mc" name="question4" value="Jesse Eisenberg"> Jesse Eisenberg<br>
+<input type="radio" id"mc" name="question4" value="Ryan Renolds"> Ryan Renolds<br>
+<input type="radio" id"mc" name="question4" value="Thomas Middleditch"> Thomas Middleditch<br>
+<input type="radio" id"mc" name="question4" value="Andrew Garfield"> Andrew Garfield<br>
+
+<p>5. Jumanji: How many Jumanji films have been made so far? </p>
+<input type="radio" id"mc" name="question5" value="1"> 1<br>
+<input type="radio" id"mc" name="question5" value="3"> 3<br>
+<input type="radio" id"mc" name="question5" value="2"> 2<br>
+<input type="radio" id"mc" name="question5" value="5"> 5<br>
+
+<p>6. Who is the director of Harry Potter ? </p>
+<input type="radio" id"mc" name="question6" value="Chris Columbus"> Chris Columbus<br>
+<input type="radio" id"mc" name="question6" value="Steven Spielberg"> Steven Spielberg<br>
+<input type="radio" id"mc" name="question6" value="James Mcavoy"> James Mcavoy<br>
+<input type="radio" id"mc" name="question6" value="Peter Jackson"> Peter Jackson<br>
+
+<p>7. Which movie won the 2020 Oscar award ? </p>
+<input type="radio" id"mc" name="question7" value="I Still Believe"> I Still Believe<br>
+<input type="radio" id"mc" name="question7" value="Joker"> Joker<br>
+<input type="radio" id"mc" name="question7" value="Parasite"> Parasite<br>
+<input type="radio" id"mc" name="question7" value="Tenet"> Tenet<br> 
+
+<p>8. Who won the Best Actor award at the Oscars in 2020 ? </p>
+<input type="radio" id"mc" name="question8" value="Mark Wahlberg"> Mark Wahlberg<br>
+<input type="radio" id"mc" name="question8" value="Matt Demon"> Matt Demon<br>
+<input type="radio" id"mc" name="question8" value="Joaquin Phoenix"> Joaquin Phoenix<br>
+<input type="radio" id"mc" name="question8" value="Jonny Depp"> Jonney Depp<br> 
+
+<p>9. What was the highest grossing film of 2019 ? </p>
+<input type="radio" id"mc" name="question9" value="Avengers End Game"> Avengers End Game<br>
+<input type="radio" id"mc" name="question9" value=" Ford vs Ferrari"> Ford vs Ferrari<br>
+<input type="radio" id"mc" name="question9" value="The Irishman"> The Irishman<br>
+<input type="radio" id"mc" name="question9" value="Jumanji: The Next Level"> Jumanji: The Next Level<br> 
+
+<p>10. Who played Ken Miles in ford vs ferrari ? </p>
+<input type="radio" id"mc" name="question10" value="Matt Damon"> Matt Damon<br>
+<input type="radio" id"mc" name="question10" value="Christian Bale"> Christian Bale<br>
+<input type="radio" id"mc" name="question10" value="K J Apa"> K J Apa <br>
+<input type="radio" id"mc" name="question10" value="Henry Cavil"> Henry Cavil <br> 
+<br>
+
+<input id ="button" type="button" value="Done" onclick= "check();"> <!-- function check java script-->
+
+</form>
+
+<div id = "submit_quiz">
+
+<!--to display which answers are correct -->
+
+<p id ="line_1"></p> 
+<p id ="line_2"></p>
+<p id ="line_3"></p>
+<p id ="line_4"></p>
+<p id ="line_5"></p>
+<p id ="line_6"></p>
+<p id ="line_7"></p>
+<p id ="line_8"></p>
+<p id ="line_9"></p>
+<p id ="line_10"></p>
+<hr>
+
+
+<p id="message"></p>
+<hr>
+
+<!--to display total number of correct answers and marks-->
+<p id="correct"></p>
+<p id="marks"></p>
+
+
+</div>
+
+<!-- anchor image-->
+<center><a href="#top"><img src="F:\w1790818 Madusha Thumbowita CW WEB DEV\arrow.png" alt="Arrow" width="70" height="70"></a> </center>
+
+</div>
+<!-- footer -->
+<footer>
+<!--page editor link-->
+<button class="button editor" onclick="window.location.href='PageEditer.html';" >PAGE EDITOR</button>
+</footer>
+
+</body>
+</html>
+
+
+
+
