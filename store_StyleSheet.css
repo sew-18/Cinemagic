@@ -1,0 +1,306 @@
+body{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	background-image: url('background.jpg');
+	background-repeat:no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+a{
+	text-decoration: none;
+	color: white;	
+}
+p{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 18px;
+	font-family:Trebuchet MS;
+	color: white;
+	text-decoration: none;	
+}
+.navicontent button{
+	background: rgb(27,26,26);
+	align-items: center;
+	margin: 10px;
+	padding: 10px;
+	height: 30px;
+	weight: 120px;
+	border: none;
+}
+.navicontent button:hover{
+	background-color:  rgb(27,26,26);
+	border:none;
+}
+.navicontent  img{
+	align: center;
+	height: 20px;
+	weight: 20px;
+}
+/*Product Viwer Part*/
+.mainContainer{
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: rgb(0,0,0, 0.8);
+}
+.mainContainer:hover{
+	background-color: rgb(0,0,0, 0.9);
+	transition: all 0.5s; 
+}
+
+.allProductView{
+	position: absolute;
+	top:80px;
+	left:0px;
+	right:0px;
+	padding:350px;
+	background-color: rgb(0,0,0, 0.4);
+	z-index: 1;
+}
+.allProductView:hover{
+	background-color: rgb(0,0,0, 0.9);
+	transition: all 0.5s; 
+}
+.titleRow{
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	justify-content: center;
+}
+.titleRow h2{
+	padding: 10px;
+	color: white;
+	text-decoration: none;
+	font-weight: none;
+}
+/*Product View*/
+.boxContainer{
+	margin: 10px;
+	position: absolute;
+	top:50px;
+	left:25px;
+	right:25px;
+}
+.col-4{
+	flex-basics: 20%;
+	padding: 14px;
+	min-width: 200px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+.col-4 img{
+	height: 300px; 
+}
+.col-4 .rating img{
+	padding: 0;
+	height: 15px;
+	width: 15px;
+}
+.col-4 p{
+	margin-top: 10px; 
+}
+.col-4 h4{
+	margin-bottom: 10px; 
+	color: #bfbfbf;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+.col-4 input[type=number]{
+	width: 50px;
+	height: 30px;
+	padding-left: 10px;
+	font-size: 20px;
+	margin: 10px;
+	color: white;
+	background-color: Black;
+}
+input[type=number]:focus{
+	outline: none;
+}
+.products h1{
+	font-family:Trebuchet MS;
+	color: white;
+	text-decoration: none;
+}
+.btn{
+	display: inline-block;
+	background: black;
+	color: grey;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border: 2px thin grey;
+}
+.btn:focus{
+	outline: none;
+}
+.btn:hover{
+	background: rgb(254, 231, 21);;
+	color: black;
+	border: none;
+}
+/*Cart*/
+.cartboxContainer{
+	margin: 10px;
+	position: absolute;
+	background-color: rgb(0,0,0);
+	top:50px;
+	left:0;
+	right:0;
+	height:700px;
+	top:-50px;
+    z-index:2;
+	display:none;
+}
+.cartContainer table{
+	margin: 25px;
+	padding: 0;
+	border-collapse: collapse;
+}
+.cartContainer input[type=text]{
+	padding: 2 px;
+	margin: 0;
+	background-color: black;
+	bolder: none;
+	color: white;
+	width: 150px;
+	font-size: 18px;
+ }
+.cartContainer th{
+	background-color: rgb(255,240,0.8);
+	color:  Black;
+	font-size: 20px;
+	font-family: Trebuchet MS;
+
+}
+.cartContainer th, td{
+	padding: 15px;
+	margin: 100px;
+	font-weight: none;
+	text-decoration: none;
+	font-size: 18px;
+	font-family: Calibri;
+}
+.cartContainer td{
+	color:white;
+}
+
+.cartContainer p{
+	padding: 25px;
+	font-family:Trebuchet MS;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+}
+.btnRemove{
+	background: black;
+	align-items: center;
+	height: 30px;
+	weight: 120px;
+	border: none;
+}
+.btnRemove:hover{
+	background-color:  black;
+	border:none;
+}
+.btnRemove:focus{
+	outline: none;
+}
+.btnRemove  img{
+	align: center;
+	height: 18px;
+	weight: 18px;
+}
+/*contact information*/
+.infoboxContainer{
+	position: absolute;
+	background-color: Black;
+	top:50px;
+	left:0;
+	right:0;
+	height:650px;
+	top:-50px;
+    z-index:3;
+	display:none;
+}
+.formContainer{
+	margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	align-items: center;
+	justify-content: center;
+}
+.formContainer input[type=text], textarea {
+	font-family:Calibri;
+	width: 100%;
+	border: 2px solid grey;
+	background-color:black;
+	box-sizing: border-box; 
+	margin-top: 10px; 
+	margin-bottom: 10px;
+	padding: 12px;
+	outline:none;
+	color:white;
+}
+.formContainer .label{
+	font-family:Calibri;
+	font-weight:bold;
+	color:white;
+}
+.checkoutbtn{
+	display: inline-block;
+	background: black;
+	color: grey;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border: 2px thin grey;
+}
+.checkoutbtn:focus{
+	outline: none;
+}
+.checkoutbtn:hover{
+	background: rgb(254, 231, 21);;
+	color: black;
+	border: none;
+}
+/*Invoice*/
+.invoiceboxContainer{
+	position: absolute;
+	background-color: Black;
+	top:50px;
+	left:0;
+	right:0;
+	height:650px;
+	top:-50px;
+    z-index:4;
+	display:none;
+}
+.invoiceContainer{
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	align-items: center;
+	justify-content: center;
+}
+.invoiceContainer th, td{
+	padding: 5px;
+	font-weight: none;
+	text-decoration: none;
+	font-family:Times New Roman;
+	font-size: 18px;
+	color: white;
+}
+.invoiceContainer .label{
+	padding: 8px;
+	text-decoration: none;
+	font-family:Times New Roman;
+	font-size: 18px;
+	color: white;
+}

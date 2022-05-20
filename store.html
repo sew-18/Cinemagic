@@ -1,0 +1,896 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Cinemagic Store</title>
+		<link rel="shortcut icon" href="logo2.png">
+		<link rel="stylesheet" href="store_StyleSheet.css">
+	
+		<style>
+			/*navigation bar styles*/
+			.navibar {
+				width:100%;
+				position: fixed; 
+				top: 0; 
+				left: 0;
+				transition: all 0.5s; 
+				background: rgb(27,26,26);
+				background: linear-gradient(90deg, rgba(27,26,26,1) 0%, rgba(0,0,0,1) 50%, rgba(27,26,26,1) 100%);
+				z-index: 3;
+
+			}
+			.navicontent{
+				margin-left: 20px;
+			}
+			.navicontent a { 
+				font-family:bebas neue;
+				font-size:20px;
+				float: left;
+				display: block;
+				color: rgb(255,240,0);  
+				text-align: center;
+				padding: 20px 10px;
+				text-decoration: none;
+			}
+			.navibar a:hover {
+				color: white;
+				transition: all 0.5s; 
+			}
+			.logo{
+				left:45%;
+				top:-5px;
+				position: absolute;
+			}
+			.shop{
+				float:right;
+				margin-right:30px;
+			}
+			/*body styles*/
+			body{
+				margin:0;
+				padding:0;
+				background-image: url("background3.jpg");
+				background-repeat:no-repeat;
+				background-size: 100%;
+				background-attachment: fixed;   
+			}
+			/*button styles*/
+			.button {
+				background-color: transparent;
+				border: 1px solid white;
+				color: white;
+				font-style:bold;
+				padding: 20px 70px;
+				font-size: 20px;
+				transition: all 0.5s; 
+				outline: none;
+			}
+			.button:hover{
+				background-color: rgb(255,240,0);
+				color:black;
+				border: 1px solid black;
+			}
+			.button:active {
+				font-size:17;
+				color:black;
+				transition:0s;
+			}
+			.bgblack{
+				background-color:black;
+			}
+			.box{
+				padding:130px;
+				left: 0;
+				display:block;
+				bottom: 0;
+			}
+			.center{
+				left:44%;
+				position: absolute;
+			}
+			.querybox{
+				position: absolute;
+				top:50px;
+				left:0px;
+				right:0px;
+				padding:320px;
+				background-color: rgb(30,30,30, 0.6);
+				z-index: 1;
+			}
+			.querybox:hover{
+				background-color: rgb(30,30,30, 0.9);
+				transition: all 0.5s;
+			}
+			.msgbox{
+				position: absolute;
+				top:-50px;
+				left:0px;
+				right:0px;
+				padding:300px;
+				background-color: rgb(30,30,30);
+				z-index:2;
+				display:none;
+			}
+			.msgcontainer {
+				background-color: black;
+				padding: 50px;
+				width:650px;
+				position:absolute;
+				top:100px;
+			}
+			input[type=text], select, textarea {
+
+			}
+			.label{
+				font-family:Calibri;
+				font-weight:bold;
+				color:black;
+			}
+			.container {
+				padding: 0px 300px;
+				position: absolute;
+				top:50px;
+				left:20px;
+				right:20px;
+			}
+			.edtbtn{
+				font-size:0.7em;
+				padding:10px;
+				float:right;
+				margin:5px;
+			}
+			.sndbtn{
+				font-size:0.7em;
+				padding:10px;
+				float:right;
+				margin:5px;
+			}
+			.disptext{
+				font-style:none;
+			}
+			table{
+				width:100%;
+				text-align:left;
+				text-align:top;
+			}
+			th{
+				vertical-align: top;
+			}
+			.txtclrwhite{
+				color:white;
+			}
+
+			footer {
+				height:250px;
+				width: 100%;
+				background: rgb(27,26,26);
+				background: linear-gradient(90deg, rgba(27,26,26,1) 0%, rgba(0,0,0,1) 50%, rgba(27,26,26,1) 100%);
+				color: white;
+				bottom: 0;
+				position: fixed;
+			}
+			.editor{
+				left:39%;
+				position:relative;
+				top:+80px;
+			}
+			.vqbtn{
+				font-size:0.7em;
+				padding:10px;
+
+			}
+			*{
+				box-sizing: border-box;
+			}
+			.column {
+				position:relative;
+				top:-150px;
+				left:-170px;
+				width:210px;
+				height:250px;
+				float:left;
+				margin:20px;
+			}
+			h1 { 
+				text-align: center;
+				padding-top:0px;
+				font-family: arial;
+				font-style:bold;
+				top:100px;
+				position:absolute;
+				font-size: 2.6em;
+				color:white;
+				left:41.5%;
+			}
+			.text1 {
+				position:absolute;
+				width:210px;
+				height:210px;
+				top:0px;
+				background: rgba(0,0,0,0.6);
+				color: #ffffff;
+				font-family: calibri;
+				font-size: 1.3em;
+				opacity:0;
+				display:flex;
+				flex-direction:column;
+				align-items:center;
+				justify-content:center;
+				transition: .5s ease;
+			}
+			.text1:hover {
+				opacity:1;
+			}
+			.new1 {
+				min-width: 500px;
+			}
+			.new {
+				padding-left:0px;
+				justify-content:center;
+				position: absolute;
+			}
+	
+		</style>
+	</head>
+	
+	<body>
+
+
+		<div class="navibar" id="navbar">
+
+			<div class="navicontent">
+
+				<a href="home.html">HOME</a>
+				<a href="movies.html">MOVIES</a>
+				<a href="quiz.html">QUIZ</a>
+				<a href="contactus.html">CONTACT US</a>
+				<a href="aboutus.html">ABOUT US</a>
+				<div  class="shop">
+					<a href="store.html">STORE</a>
+					<button class="btn" onclick="viewCartFunction()">
+
+						<img onmouseover="white(this)" onmouseout="yellow(this)"  src="shopping-bag-yellow.png" alt="logo">
+							<script>
+								function yellow(x){
+									x.src="shopping-bag-yellow.png";
+								}
+								function white(x){
+									x.src="shopping-bag.png";
+								}	
+							</script>
+					</button>
+					
+				</div>
+			</div>
+			<div>
+				<a href="home.html"><img class="logo center" src="logo.png"  width="130" alt="logo" ></a>
+			</div>
+		</div>
+		
+
+		
+		<div class="mainContainer" >
+			<!--All Products-->	
+			<div class="allProductView" id="allProductView">
+				
+				<div class="boxContainer" id="boxContainer">
+					<div class="titleRow">
+						<h2>ALL PRODUCTS</h2>
+					</div>
+					
+					<div class="row">
+						<div class="col-4">
+							<img onmouseover="front(this)" onmouseout="back(this)" src="F9-hoodie.png" alt="productNO:01">
+							<script>
+								function front(x){
+									x.src="F9-hoodie-front.png";
+								}
+								function back(x){
+									x.src="F9-hoodie.png";
+								}
+							</script>
+							<h4>F9 ZIPPER HOODIE</h4> 
+							<div class="rating">
+								<img src="star.png" alt="star">
+								<img src="star.png" alt="star">
+								<img src="star.png" alt="star">
+								<img src="star-empty.png" alt="star">
+							</div>
+							<p>£45.00</p>
+							<button class="btn" id="f9zipperhoodie" onclick="addCartfunction(this.id)">ADD TO CART</button>
+						</div>
+						
+						<div class="col-4">
+								<img onmouseover="back2(this)" onmouseout="front2(this)"  src="F9-cap-front.png" alt="productNO:02">
+								<script>
+									function front2(x){
+										x.src="F9-cap-front.png";
+									}
+									function back2(x){
+										x.src="F9-cap-back.png";
+									}	
+								</script>
+							<h4>F9 CAP</h4>
+							<div class="rating">
+								<img src="star.png" alt="star">
+								<img src="star-empty.png" alt="star"> 
+								<img src="star-empty.png" alt="star">
+								<img src="star-empty.png" alt="star">
+							</div>
+							<p>£20.00</p>
+							<button class="btn" id="f9cap" onclick="addCartfunction(this.id)">ADD TO CART</button>
+						</div>
+						
+						<div class="col-4">
+							<img onmouseover="back4(this)" onmouseout="front4(this)"  src="E-Sticker-.JPG" alt="productNO:03">
+							<script>
+								function front4(x){
+									x.src="E-Sticker-.JPG";
+								}
+								function back4(x){
+									x.src="E-Sticker-bottle.JPG";
+								}
+							</script>
+							<h4>STICKER</h4>
+							<div class="rating">
+								<img src="star.png" alt="star">
+								<img src="star.png" alt="star">
+								<img src="star-empty.png" alt="star">
+								<img src="star-empty.png" alt="star">
+							</div>
+							<p>£2.00</p>
+							<button class="btn" id="sticker" onclick="addCartfunction(this.id)">ADD TO CART</button>
+						</div>
+						
+						<div class="col-4">
+							<img onmouseover="back6(this)" onmouseout="front6(this)" src="sonic-hoodie.jpg" alt="productNO:04">
+							<script>
+								function front6(x){
+									x.src="sonic-hoodie.jpg";
+								}
+								function back6(x){
+									x.src="sonic-logo.jpg";
+								}
+							</script>
+							<h4>SONIC LINER HOODIE</h4>
+							<div class="rating">
+								<img src="star.png"alt="star">
+								<img src="star.png" alt="star">
+								<img src="star.png" alt="star">
+								<img src="star.png" alt="star">
+							</div>
+							<p>£65.00</p>
+							<button class="btn" id="sonichoodie"onclick="addCartfunction(this.id)">ADD TO CART</button>
+						</div>
+						
+						<div class="col-4">
+							<img onmouseover="front5(this)" onmouseout="back5(this)" src="SC-male.JPG" alt="productNO:05">
+							<script>
+								function front5(x){
+									x.src="SC-poster.jpg";
+								}
+								function back5(x){
+									x.src="SC-male.JPG";
+								}
+							</script>
+							<h4>PULLOVER HOODIE</h4>
+							<div class="rating">
+								<img src="star.png" alt="star">
+								<img src="star-empty.png" alt="star">
+								<img src="star-empty.png" alt="star">
+								<img src="star-empty.png" alt="star">
+							</div>
+							<p>£35.00</p>
+							<button class="btn" id="pulloverhoodie" onclick="addCartfunction(this.id)">ADD TO CART</button>
+						</div>
+					</div>
+					
+					
+					<!-- cart -->
+					<div class="cartboxContainer" id="cartboxContainer"> 
+					
+						<div class="titleRow">
+							<h2>YOUR CART</h2>
+						</div>
+						
+						<p id="demo"></p>
+						
+						<div class="cartContainer">
+							<table id="shopingCartTable">
+								<tr>
+									<th>PRODUCT NAME</th>
+									<th>PRICE</th>
+									<th>QUANTITY</th>
+									<th>SUB TOTAL </th>
+									<th>---------- </th>
+								</tr>
+								
+							</table>
+							
+							<button class="btn" id="checkout" onclick="validateFuncton()" style="float:right;">CHECKOUT PROCESS</button>
+						</div>
+						
+
+					</div>
+					
+					<div class="infoboxContainer" id="infoboxContainer"> 
+						<div class="titleRow">
+							<h2>CONTACT INFORMATION</h2>
+						</div>
+						
+						<div class="formContainer">
+							<form>
+							
+								<label for="name" class="label">NAME :</label>
+								<input type="text" id="name" name="name" placeholder="Name Here">
+
+								<label for="email" class="label">EMAIL :</label>
+								<input type="text" id="email" name="email" placeholder="Email Here">
+
+								<label for="address" class="label">ADDRESS: </label>
+								<textarea id="address" name="address" placeholder="Address Here" style="height:75px"></textarea>
+		  
+								<label for="number" class="label">CONTACT NUMBER: </label>
+								<input type="text" id="number" name="number" placeholder="Contact Number Here">
+								
+								<input type="button" value="CHECKOUT" class="checkoutbtn" id="checkoutbtn" onclick="validateFormFunction(form)" style="float:right;">
+
+							</form>
+							
+						</div>
+				
+					
+					</div>
+					
+					<div class="invoiceboxContainer" id="invoiceboxContainer"> 
+			
+						<div class="titleRow">
+							<h2>INVOICE</h2>
+						</div>
+						
+						<div class="invoiceContainer">
+							<table id="invoiceTable">
+								<tr>
+									<th><label name="Iname" class="label" >NAME:  </label></th>
+									<th><label name="Iname " class="Iname" id="Iname" ></label></th>
+								</tr>
+								<tr>
+									<th><label name="Iemail" class="label">EMAIL:  </label></th>
+									<th><label name="Iemail" class="Iemail" id="Iemail"></label></th>
+								</tr>
+								<tr>
+									<th><label name="Iaddress" class="label">ADDRESS:  </label></th>
+									<th><label name="Iaddress" class="Iaddress" id="Iaddress"></label></th>
+								</tr>
+								<tr>
+									<th><label name="Inumber" class="label">CONTACT NUMBER:  </label></th>
+									<th><label name="Inumber" class="Inumber" id="Inumber"></label></th>
+								</tr>
+								<tr>
+									<th> </th>
+									<th> </th>
+								</tr>
+								<tr>
+									<th>---------------------------------------------------------------- </th>
+									<th>----------------------------------------------------------------- </th>
+								</tr>
+								<tr>
+									<th>Product Name</th>
+									<th>Quantity</th>
+									<th>Price</th>
+								</tr>
+
+							</table>
+							<input type="button" value="CLOSE" class="checkoutbtn" id="checkoutbtn" onclick="goStore()">
+							<br>
+
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+
+
+		</div>
+		
+
+	
+
+
+
+
+	
+		<script>
+			//product part
+			
+			var cell_1 , cell_2, cell_3 ,cell_4 ,cell_5 , cell_6 , cell_7 ,cell_8 ,cell_9 , cell_10 , cell_11 , cell_12, cell_13 ,cell_14 ,cell_15 , cell_16 , cell_17, cell_18 ,cell_19 ,cell_20, cell_21 , cell_22 , cell_23, cell_24 ,cell_25 ,cell_26 , cell_27 , cell_28, cell_29 ,cell_30;
+			var cart = [];
+			
+			//check the product is repeat or not, add to values cart array, add to values to cart table
+			function addCartfunction(clicked){
+				
+				var productName = clicked;
+				var n = cart.includes(productName);
+				
+				
+				if(n == true){				
+					alert("This product is already in your Cart !!");
+				}
+				else{
+					alert("Add to the card successfully!");
+					cart.push(productName);
+					
+					if(productName == "f9zipperhoodie"){				
+						var table = document.getElementById("shopingCartTable");
+
+						var row = table.insertRow();
+
+						cell_1 = row.insertCell(0);
+						cell_2 = row.insertCell(1);
+						cell_3 = row.insertCell(2);
+						cell_4 = row.insertCell(3);
+						cell_25 = row.insertCell(4);
+			
+						cell_1.innerHTML = "F9 ZIPPER HOODIE";
+						cell_2.innerHTML = "£ "+ 45;
+						cell_3.innerHTML += '<input type="text" id="quantityValue1" name="f9zipperhoodie" onkeyup="subTotalFunction(this.name)">';
+						cell_4.innerHTML ="£ "+  0;
+						cell_25.innerHTML += '<button onclick="removeRowFunction(this.name)" class="btnRemove" name="f9zipperhoodie"><img src="delete.png"></button>';
+						
+					}
+					if(productName == "f9cap"){
+					
+						var table = document.getElementById("shopingCartTable");
+						
+						var row = table.insertRow();
+						
+						cell_5 = row.insertCell(0);
+						cell_6 = row.insertCell(1);
+						cell_7 = row.insertCell(2);
+						cell_8 = row.insertCell(3);
+						cell_26 = row.insertCell(4);
+			
+						cell_5.innerHTML = "F9 CAP";
+						cell_6.innerHTML = "£ "+ 20;
+						cell_7.innerHTML += '<input type="text" id="quantityValue2" name="f9cap" onkeyup="subTotalFunction(this.name)">';
+						cell_8.innerHTML ="£ "+  0;
+						cell_26.innerHTML += '<button onclick="removeRowFunction(this.name)" class="btnRemove" name="f9cap"><img src="delete.png"></button>';
+					}
+					if(productName == "sticker"){
+					
+						var table = document.getElementById("shopingCartTable");
+						
+						var row = table.insertRow();
+						
+						cell_9 = row.insertCell(0);
+						cell_10 = row.insertCell(1);
+						cell_11 = row.insertCell(2);
+						cell_12 = row.insertCell(3);
+						cell_27 = row.insertCell(4);
+			
+						cell_9.innerHTML = "STICKER";
+						cell_10.innerHTML = "£" + 2;
+						cell_11.innerHTML += '<input type="text" id="quantityValue3" name="sticker" onkeyup="subTotalFunction(this.name)">';
+						cell_12.innerHTML ="£ "+ 0;
+						cell_27.innerHTML += '<button onclick="removeRowFunction(this.name)" class="btnRemove" name="sticker"><img src="delete.png"></button>';
+					}
+					if(productName == "sonichoodie"){
+					
+						var table = document.getElementById("shopingCartTable");
+						
+						var row = table.insertRow();
+						
+						cell_13 = row.insertCell(0);
+						cell_14 = row.insertCell(1);
+						cell_15 = row.insertCell(2);
+						cell_16 = row.insertCell(3);
+						cell_28 = row.insertCell(4);
+			
+						cell_13.innerHTML = "SONIC LINER HOODIE";
+						cell_14.innerHTML = "£ "+ 65;
+						cell_15.innerHTML += '<input type="text" id="quantityValue4" name="sonichoodie" onkeyup="subTotalFunction(this.name)">';
+						cell_16.innerHTML ="£ "+ 0;
+						cell_28.innerHTML += '<button onclick="removeRowFunction(this.name)" class="btnRemove" name="sonichoodie"><img src="delete.png"></button>';
+					}
+					if(productName == "pulloverhoodie"){
+					
+						var table = document.getElementById("shopingCartTable");
+						
+						var row = table.insertRow();
+						
+						cell_17 = row.insertCell(0);
+						cell_18 = row.insertCell(1);
+						cell_19 = row.insertCell(2);
+						cell_20 = row.insertCell(3);
+						cell_29 = row.insertCell(4);
+			
+						cell_17.innerHTML = "PULLOVER HOODIE";
+						cell_18.innerHTML = "£ "+ 35;
+						cell_19.innerHTML += '<input type="text" id="quantityValue5" name="pulloverhoodie" onkeyup="subTotalFunction(this.name)">';
+						cell_20.innerHTML = "£ "+ 0;
+						cell_29.innerHTML += '<button onclick="removeRowFunction(this.name)" class="btnRemove" name="pulloverhoodie"><img src="delete.png"></button>';
+
+					}
+					
+				}
+			}
+			
+			// display the hidden cart div and check array is empty or not
+			function viewCartFunction(){
+				div_cart = document.getElementById("cartboxContainer");
+				div_cart.style.display = "block";
+				
+				var table = document.getElementById("shopingCartTable");
+				
+				var row = table.insertRow();
+				cell_21 = row.insertCell(0);
+				cell_22 = row.insertCell(1);
+				cell_23 = row.insertCell(2);
+				cell_30 = row.insertCell(3);
+				cell_24 = row.insertCell(4);
+					
+				cell_30.innerHTML = "TOTAL";
+				
+				var count = cart.length;
+				var i;
+				for (i =0; i <= count; i++) {
+					var productName =cart[i];
+					if(count == 0){
+						document.getElementById("demo").innerHTML = "Your Cart is Empty!!!";
+						document.getElementById("shopingCartTable").style.display = "none";
+						document.getElementById("checkout").style.display = "none";
+					}
+				}
+
+			}
+			
+			
+			var total = 0 ;
+			var result1 = 0, result2 = 0, result3 = 0, result4 = 0, result5 = 0;
+			//calculate the sub total and total 
+			function subTotalFunction(clicked){
+				
+				item = clicked;
+				var qunti;
+				
+				if(item == "f9zipperhoodie"){
+					qunti = document.getElementById("quantityValue1").value;
+				}else if(item == "f9cap"){
+					qunti = document.getElementById("quantityValue2").value;
+				}else if(item == "sticker"){
+					qunti = document.getElementById("quantityValue3").value;
+				}else if(item == "sonichoodie"){
+					qunti = document.getElementById("quantityValue4").value;
+				}else if(item == "pulloverhoodie"){
+					qunti = document.getElementById("quantityValue5").value;
+				} 
+				
+
+				if(isNaN(qunti) || qunti == 0 || qunti < 0){
+					alert("Please Enter valid Quantity!");
+				}
+				else{
+					if(item == "f9zipperhoodie"){
+						result1 = qunti *  45;
+					    cell_4.innerHTML = "£ "+ result1;
+
+					}
+					if(item == "f9cap"){
+						result2 = qunti *  20;
+					    cell_8.innerHTML = "£ "+ result2;
+					
+					}
+					if(item == "sticker"){
+						result3 = qunti *  2;
+					    cell_12.innerHTML = "£ "+ result3;
+
+					}
+					if(item == "sonichoodie"){
+						result4 = qunti *  65;
+					    cell_16.innerHTML = "£ "+ result4;
+
+					}
+					if(item == "pulloverhoodie"){
+						result5 = qunti *  35;
+					    cell_20.innerHTML = "£ "+ result5;
+
+					}
+					totalFunction();
+
+				}
+			}
+			
+			function totalFunction(){
+				total = result1 + result2 + result3 + result4 + result5;
+					
+				cell_24.innerHTML = "£ "+ total;
+			}
+			//Remove the item from the cart array and update total
+			function removeRowFunction(clicked){
+				var removeItem = clicked;
+				
+				var count = cart.length;
+				var i;
+				for (i =0; i <= count; i++) {
+					var productName =cart[i];
+					if(productName == removeItem){
+						var subTot = document.getElementById("shopingCartTable").rows[i+1].cells[3].innerHTML;
+						subTotValue = subTot.replace('£ ','');
+						
+						document.getElementById("shopingCartTable").deleteRow(i+1);
+						cart.splice(i , 1);	
+						total = total - subTotValue ;
+					
+						cell_24.innerHTML = "£ "+ total;
+						
+					}
+				}
+			}
+			//check validity of text field and view contact info form
+			function validateFuncton(){
+				if(total > 0){
+					div_contInfo = document.getElementById("infoboxContainer");
+					div_cart2 = document.getElementById("cartboxContainer");
+					div_cart2.style.display = "none";
+					div_contInfo.style.display = "block";
+				}else{
+					alert("Your Cart is empty Cannot Checkout!!")
+				}
+
+			
+			}
+		
+			function validateFormFunction(form){
+			
+			
+				if ( form.name.value.length == 0 ) {
+					alert( "Please Enter Your Name !!" );
+					return false;
+				} 
+				if ( form.email.value.length == 0 ) {
+					alert( "Please Enter Your Email !!" );
+					return false;
+				} 
+				if ( form.address.value.length == 0 ) {
+					alert( "Please Enter Your Address !!" );
+					return false;
+				}
+				if ( form.number.value.length == 0){
+					alert( "Please Enter Your Valid Number !!" );
+					return false;
+				}
+				if ( form.number.value.length > 10) {
+					alert( "Please Enter Your Valid Number !!" );
+					return false;
+				}
+				if (form.number.value.length < 10) {
+					alert( "Please Enter Your Valid Number !!" );
+					return false;
+				}
+
+				var invoice = document.getElementById("invoiceboxContainer");
+				var div_contInfo2 = document.getElementById("infoboxContainer");
+				
+				div_contInfo2.style.display = "none";
+				invoice.style.display = "block";
+				
+				document.getElementById('Iname').innerHTML = document.getElementById('name').value;
+				document.getElementById('Iemail').innerHTML = document.getElementById('email').value;
+				document.getElementById('Iaddress').innerHTML = document.getElementById('address').value;
+				document.getElementById('Inumber').innerHTML = document.getElementById('number').value;
+				
+
+			
+				var count = cart.length;
+				var i;
+				for (i =0; i < count; i++) {
+					
+					var table2 = document.getElementById("invoiceTable");
+					
+					var itemName = document.getElementById("shopingCartTable").rows[i+1].cells[0].innerHTML;
+					var Itemquntity; //= document.getElementById("shopingCartTable").rows[i+1].cells[2].innerHTML;
+					if(itemName == "F9 ZIPPER HOODIE"){
+						Itemquntity = document.getElementById("quantityValue1").value;
+					}else if(itemName == "F9 CAP"){
+						Itemquntity = document.getElementById("quantityValue2").value;
+					}else if(itemName == "STICKER"){
+						Itemquntity = document.getElementById("quantityValue3").value;
+					}else if(itemName == "SONIC LINER HOODIE"){
+						Itemquntity = document.getElementById("quantityValue4").value;
+					}else if(itemName == "PULLOVER HOODIE"){
+						Itemquntity = document.getElementById("quantityValue5").value;
+					} 
+					
+					var subTot = document.getElementById("shopingCartTable").rows[i+1].cells[3].innerHTML;
+					
+					var row = table2.insertRow();
+					var cell_004 = row.insertCell(0);
+					var cell_005 = row.insertCell(1);
+					var cell_006 = row.insertCell(2);
+	
+					
+					cell_004.innerHTML = itemName;				
+					cell_005.innerHTML = Itemquntity;					
+					cell_006.innerHTML = subTot;
+					
+				}
+				var row = table2.insertRow();
+				var cell_007 = row.insertCell(0);
+				var cell_008 = row.insertCell(1);
+				var cell_009 = row.insertCell(2);
+
+				
+				cell_007.innerHTML = "";				
+				cell_008.innerHTML = "Bill Total";					
+				cell_009.innerHTML = "£ "+ total ;
+
+			}
+			
+			function goStore(){
+				var invoice = document.getElementById("invoiceboxContainer");
+				invoice.style.display = "none";
+				
+				location.reload();
+			}
+		
+		
+			/*Navigation part*/
+			var prevpos = window.pageYOffset;
+			window.onscroll = function() {
+				var currpos = window.pageYOffset;
+				if (prevpos > currpos) {
+					document.getElementById("navbar").style.top = "0";
+				} else {
+					document.getElementById("navbar").style.top = "-80px";
+				}
+
+				prevpos = currpos;
+			}
+
+			function check(form) {
+				if ( form.name.value.length == 0 ) {
+					alert( "You have not entered the name!" );
+					return false;
+				} 
+				if ( form.email.value.length == 0 ) {
+					alert( "You have not entered a email!" );
+					return false;
+				} 
+				if ( form.msg.value.length == 0 ) {
+					alert( "You have not entered a message!" );
+					return false;
+				} 
+				if ( form.name.value.length > 0 && form.email.value.length > 0 && form.msg.value.length > 0){
+					var msgbx = document.getElementById("msgbx");
+					var editbtn = document.getElementById("msgeditbtn");
+					var sendbtn = document.getElementById("msgsendbtn");
+					
+					msgbx.style.display = "block";
+					document.getElementById('msgsubjectdisp').innerHTML = document.getElementById('subject').value;
+					document.getElementById('msgnamedisp').innerHTML = document.getElementById('name').value;
+					document.getElementById('msgemaildisp').innerHTML = document.getElementById('email').value;
+					document.getElementById('msgmsgdisp').innerHTML = document.getElementById('msg').value;
+					editbtn.onclick = function() {
+						msgbx.style.display = "none";
+					}
+					sendbtn.onclick = function() {
+						msgbx.style.display = "none";
+						document.queryform.submit();
+						document.queryform.reset(); 
+				
+					}
+			
+				}
+
+			}
+		
+		</script>
+	
+
+	</body>
+	
+
+</html>
