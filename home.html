@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <style>
+         /*slideshow panel*/
+         .slogan{
+         color:white;
+         font-family: arial;
+         font-size:5em;
+         top:250px;
+         position:absolute;
+         text-align:center;
+         width:100%;
+         line-height: 0.8em;
+         text-decoration: none; 
+         z-index:2;
+         transition:0.5s;
+         }
+         #subtitle{
+         font-size:1em;
+         color:white;
+         font-family:arial;
+         position:absolute;
+         top:370px;
+         text-align:center;
+         width:100%;
+         }
+         .blkbox1{
+         background-color:rgb(0,0,0,0);
+         height:750px;
+         top:0px;
+         position:absolute;
+         z-index:2;
+         width:100%;
+         transition:0.5s;
+         }
+         .slideimg{
+         z-index:1;
+         position:relative;
+         background-color:black;
+         }
+         .anchors{
+         font-family:bebas neue;
+         font-weight:bold;
+         position:absolute;
+         font-size:2em;
+         top:450px;
+         z-index:9;
+         width:100%;
+         text-align:center;
+         }
+         .anchors a{
+         color:rgb(255,240,0);
+         text-decoration:none;
+         margin:5px;
+         }
+         /*Quiz panel*/
+         .quizbox{
+         height:350px;
+         background-color:rgb(0,0,0,0.8);
+         }
+         .quizlogan{
+         color:white;
+         font-family: arial;
+         font-size:4em;
+         text-decoration: none;
+         font-weight:bold;
+         position:absolute;
+         left:140px;
+         padding-top:130px;
+         }
+         .quizsub{
+         color:rgb(255,240,0);
+         font-family: arial;
+         font-size:1.5em;
+         position:absolute;
+         left:150px;
+         padding-top:0px;
+         line-height: 0.9em;
+         text-align:center;
+         top:930px;
+         }
+         #iphone{
+         position:absolute;
+         Right:230px;
+         padding-top:40px;
+         }
+         /*shop panel*/
+         #shopbox{
+         margin-top:10px;
+         height:350px;
+         background-color:black;
+         }
+         .shopslogan{
+         color:white;
+         font-family: arial;
+         font-size:4em;
+         text-decoration: none;
+         font-weight:bold;
+         position:absolute;
+         right:190px;
+         padding-top:130px;
+         }
+         .shopsub{
+         color:rgb(255,240,0);
+         font-family: arial;
+         font-size:1.5em;
+         position:absolute;
+         right:270px;
+         padding-top:0px;
+         line-height: 0.9em;
+         text-align:center;
+         top:1655px;
+         }
+         .merch{
+         position:absolute;
+         left:260px;
+         padding-top:40px;
+         }
+         /*Trending panel*/
+         #trendingbox{
+         margin-top:10px;
+         height:350px;
+         background-color:black;
+         }
+         #trending{
+         color:white;
+         font-family: arial;
+         font-size:2em;
+         text-decoration: none;
+         font-weight:bold;
+         position:absolute;
+         width:100%;
+         padding-top:5px;
+         text-align:center;
+         }
+         .trending{
+         padding-top:35px;
+         left:-20px;
+         position:absolute;
+         }
+         /*top scroll button*/
+         #topbtn{
+         position: fixed; 
+         bottom: 20px; 
+         right: 30px; 
+         z-index: 99; 
+         border: none; 
+         outline: none; 
+         background-color: rgb(255,240,0); 
+         color: black;
+         cursor: pointer; 
+         padding: 15px; 
+         font-weight:bold;
+         display : none;
+         }
+      </style>
+      <link rel="stylesheet" href="main.css">
+      <title>Cinemagic Home</title>
+      <link rel="shortcut icon" href="logo2.png">
+   </head>
+   <body>
+      <div>
+         <!-- navigation bar -->
+         <div class="navibar" id="navbar">
+            <div class="navicontent">
+               <a href="home.html">HOME</a>
+               <a href="movies.html">MOVIES</a>
+               <a href="quiz.html">QUIZ</a>
+               <a href="contactus.html">CONTACT US</a>
+               <a href="aboutus.html">ABOUT US</a>
+               <div  class="shop">
+                  <a href="store.html">STORE</a>
+               </div>
+            </div>
+            <div>
+               <a href="home.html"><img class="logo center" src="logo.png"  alt="logo" width="130" ></a>
+            </div>
+         </div>
+         <!-- slide show and slogan -->
+         <div id="slideshow">
+            <div class="slideimg">
+               <img id="mainimg" src="1.jpg" alt="slide image" width="100%" >
+            </div>
+            <div class="blkbox1" id="blkbox1"></div>
+            <a class= "slogan" href="movies.html" id="slogan">EXPLORE<br>THE CINEMA WORLD</a>
+            <p class= "slogan" id="subtitle">Cinemagic is the premiere destination for all Movie lovers.Find any movie in any category.</p>
+            <div class="anchors"><a href="#quizlogan">ANSWER AND WIN</a><a style="color:white">|</a><a href="#trendingbox">TRENDING</a><a style="color:white">|</a><a href="#shopbox">FIND MERCH</a><a style="color:white">|</a><a style="color:white" href="sitemap.html">SITE MAP</a></div>
+         </div>
+         <!-- quiz panel -->
+         <div id="quizbox" class="quizbox">
+            <a class= "quizlogan" href="quiz.html" id="quizlogan">Answer & Win.</a>
+            <p class= "quizsub" id="quizsub">Answer quiz and Stand a chance to <br>win a brand new iphone 12</p>
+            <div><img id="iphone" src="iphone.jpg" alt="iphone" width="300px" ></div>
+         </div>
+         <!-- trending panel -->
+         <div id="trendingbox" class="trendingbox">
+            <div><img class="trending" src="trending.png" alt="trending" width="100%" ></div>
+            <a href="" id="trending">Trending</a>
+         </div>
+         <!-- shop panel -->
+         <div id="shopbox" class="shopbox">
+            <a class= "shopslogan" href="store.html" id="shopslogan">Grab our Merch</a>
+            <p class= "shopsub" id="shopsub">Find exlusive limited edition <br>collectibles and merchandise</p>
+            <div><img class="merch" src="figure.jpg" alt="merchandise" width="200px" ></div>
+         </div>
+      </div>
+      <!-- top scroll button -->
+      <button onclick="topFunction()" id="topbtn" title="Go to top">Top</button>
+      <!-- footer -->
+      <footer>
+         <button class="button editor" onclick="window.location.href='ravindu.html';" >PAGE EDITOR</button>
+      </footer>
+      <script>
+         // slogan mouse over function with background darkening
+         document.getElementById("slogan").onmouseover = function(){
+         document.getElementById("blkbox1").style.backgroundColor="rgb(0,0,0,0.6)";
+         document.getElementById("slogan").style.fontSize="5.1em";
+         }
+         document.getElementById("slogan").onmouseout = function(){
+         document.getElementById("blkbox1").style.backgroundColor="rgb(0,0,0,0)";
+         document.getElementById("slogan").style.fontSize="5em";
+         }
+         
+         // scroll function to apear top button 
+         function scrollFunction() {
+           if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+             document.getElementById("topbtn").style.display = "block";
+           } else {
+             document.getElementById("topbtn").style.display = "none";
+           }
+         }
+         // scroll function to hidding navigation bar
+         var prevpos = window.pageYOffset;
+         window.onscroll = function() {
+         scrollFunction();
+           var currpos = window.pageYOffset;
+           if (prevpos > currpos) {
+             document.getElementById("navbar").style.top = "0";	
+           } else {
+             document.getElementById("navbar").style.top = "-80px";
+           }
+           prevpos = currpos;
+         }
+         // function to scroll page up when clicked top button
+         function topFunction() {
+           document.documentElement.scrollTop = 0;
+         }
+		 // change images in slideshow
+         var counter = 0;
+         var images = ["1.jpg","2.jpg","3.jpg","4.png","5.jpg"];
+         				setInterval(function(){
+         					
+         					document.getElementById("mainimg").src = images[counter];
+         					counter++;
+         					if(counter == 5){
+         						counter = 0;
+         						
+         					}
+         					
+         				},4000);
+      </script>
+   </body>
+</html>

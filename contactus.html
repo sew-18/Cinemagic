@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <style>
+         /*background blackbox*/
+         .marg{
+         padding:340px;
+         background-color: rgb(0,0,0, 0.8);
+         }
+         .marg:hover{
+         background-color: rgb(0,0,0, 0.9);
+         transition: all 0.5s; 
+         }
+         .container {
+         padding: 0px 300px;
+         position: absolute;
+         top:50px;
+         left:20px;
+         right:20px;
+         }
+         /*query form*/
+         .querybox{
+         position: absolute;
+         top:50px;
+         left:0px;
+         right:0px;
+         padding:320px;
+         background-color: rgb(30,30,30, 0.6);
+         z-index: 1;
+         }
+         .querybox:hover{
+         background-color: rgb(30,30,30, 0.9);
+         transition: all 0.5s;
+         }
+         input[type=text], select, textarea {
+         font-family:helvetica;
+         width: 100%; 
+         padding: 11px; 
+         border: none; 
+         background-color:rgb(0, 0, 0);
+         box-sizing: border-box; 
+         margin-top: 6px; 
+         margin-bottom: 16px; 
+         outline:none;
+         color:rgb(254, 231, 21);
+         }
+         .vqbtn{
+         font-size:0.7em;
+         padding:10px;
+         }
+         /*message box*/
+         .msgbox{
+         position: absolute;
+         top:-50px;
+         left:0px;
+         right:0px;
+         padding:300px;
+         background-color: rgb(30,30,30);
+         z-index:2;
+         display:none;
+         }
+         .msgcontainer {
+         background-color: black;
+         padding: 50px;
+         width:650px;
+         position:absolute;
+         top:100px;  
+         }
+         .label{
+         font-family:Trebuchet MS;
+         font-weight:bold;
+         color:rgb(100,100,100);
+         }
+         .edtbtn{
+         font-size:0.7em;
+         padding:10px;
+         float:right;
+         margin:5px;
+         }
+         .sndbtn{
+         font-size:0.7em;
+         padding:10px;
+         float:right;
+         margin:5px;
+         }
+         table{
+         width:100%;
+         text-align:left;
+         }
+         th{
+         vertical-align: top;
+         }
+         .txtclrwhite{
+         color:white;
+         }
+      </style>
+      <link rel="stylesheet" href="main.css">
+      <title>Cinemagic Contact Us</title>
+      <link rel="shortcut icon" href="logo2.png">
+   </head>
+   <body>
+      <div>
+      <!-- navigation bar -->
+      <div class="navibar" id="navbar">
+         <div class="navicontent">
+            <a href="home.html">HOME</a>
+            <a href="movies.html">MOVIES</a>
+            <a href="quiz.html">QUIZ</a>
+            <a href="contactus.html">CONTACT US</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <div  class="shop">
+               <a href="store.html">STORE</a>
+            </div>
+         </div>
+         <div>
+            <a href="home.html"><img class="logo center" alt="logo "src="logo.png"  width="130" ></a>
+         </div>
+      </div>
+      <!-- background blackbox -->
+      <div class="marg">
+         <div class="querybox" id="querybox">
+            <div class="container">
+               <!-- query form -->
+               <form action="mailto:ravinduliyanaarachchi@gmail.com" method="POST" enctype="text/plain" name="queryform">
+                  <label for="subject" class="label">QUERY IS ABOUT</label>
+                  <select id="subject" name="subject">
+                     <option value="Contents">Contents</option>
+                     <option value="Merchandise">Merchandise</option>
+                     <option value="Promotions">Promotions</option>
+                     <option value="Other">Other</option>
+                  </select>
+                  <label for="fname" class="label">NAME</label>
+                  <input type="text" id="name" name="name" placeholder="Your name..">
+                  <label for="lname" class="label">EMAIL</label>
+                  <input type="text" id="email" name="email" placeholder="Your email..">
+                  <label for="msg" class="label">MESSAGE</label>
+                  <textarea id="msg" name="msg" placeholder="Write something.." style="height:200px"></textarea>
+                  <input type="button" value="VIEW QUERY" class="button vqbtn" onclick="check(form) ">
+                  <!-- message box -->
+                  <div class="msgbox" id="msgbx">
+                     <div class="msgcontainer">
+                        <table>
+                           <tr>
+                              <th><label name="msgsubject" class="label" >SUBJECT:  </label></th>
+                              <th><label name="msgsubjectdisp " class="txtclrwhite" id="msgsubjectdisp" ></label></th>
+                           </tr>
+                           <tr>
+                              <th><label name="msgname" class="label">NAME:  </label></th>
+                              <th><label name="msgnamedisp" class="txtclrwhite" id="msgnamedisp"></label></th>
+                           </tr>
+                           <tr>
+                              <th><label name="msgemail" class="label">EMAIL:  </label></th>
+                              <th><label name="msgemaildisp" class="txtclrwhite" id="msgemaildisp"></label></th>
+                           </tr>
+                           <tr>
+                              <th><label name="msgmsg" class="label">MESSAGE:  </label></th>
+                              <th><label name="msgmsgdisp" class="txtclrwhite" id="msgmsgdisp"></label></th>
+                           </tr>
+                        </table>
+                        <br>
+                        <input type="submit" value="SEND" class="edtbtn button" id="msgsendbtn" >
+                        <input type="button" value="EDIT" class="sndbtn button" id="msgeditbtn" >
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!-- footer -->
+      <footer>
+         <button class="button editor" onclick="window.location.href='ravindu.html';" >PAGE EDITOR</button>
+      </footer>
+      <script>
+         // scroll function to hidding navigation bar
+         var prevpos = window.pageYOffset;
+         window.onscroll = function() {
+           var currpos = window.pageYOffset;
+           if (prevpos > currpos) {
+             document.getElementById("navbar").style.top = "0";
+         	
+           } else {
+             document.getElementById("navbar").style.top = "-80px";
+           }
+           prevpos = currpos;
+         }
+         // function to check whether filled all required fields
+             function check(form) {
+                if ( form.name.value.length == 0 ) {
+         	      
+                   alert( "You have not entered the name!" );
+                   return false;
+                } 
+         	   if ( form.email.value.length == 0 ) {
+                   alert( "You have not entered a email!" );
+                   return false;
+                } 
+         	   if ( form.msg.value.length == 0 ) {
+                   alert( "You have not entered a message!" );
+                   return false;
+                } 
+         // if filled all the fields get details to a message panel
+         	   if ( form.name.value.length > 0 && form.email.value.length > 0 && form.msg.value.length > 0){
+         	   	var msgbx = document.getElementById("msgbx");
+         	    var editbtn = document.getElementById("msgeditbtn");
+         		var sendbtn = document.getElementById("msgsendbtn");
+         	    msgbx.style.display = "block";
+         		 document.getElementById('msgsubjectdisp').innerHTML = document.getElementById('subject').value;
+         		 document.getElementById('msgnamedisp').innerHTML = document.getElementById('name').value;
+         		 document.getElementById('msgemaildisp').innerHTML = document.getElementById('email').value;
+         		 document.getElementById('msgmsgdisp').innerHTML = document.getElementById('msg').value;
+         // edit query function
+         	    editbtn.onclick = function() {
+              		msgbx.style.display = "none";
+         		}
+         // submit and reset query function
+         		sendbtn.onclick = function() {   		
+         			document.queryform.submit();
+         			setTimeout(function(){
+             document.queryform.reset(); 
+         	msgbx.style.display = "none";
+         }, 2000);			
+         		}		
+         }	   
+             }
+      </script>
+   </body>
+</html>
