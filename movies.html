@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <style>
+         /*background box*/
+         #box1{
+         padding:510px;
+         background-color: rgb(254, 231, 21, 0.8);
+         margin:0;
+         }
+         #box1:hover{
+         background-color: rgb(254, 231, 21, 0.9);
+         transition: all 0.5s; 
+         }
+         /*default details panel*/
+         #defaultbox{
+         margin:0;
+         background-color: rgb(20,20,20);
+         padding:20px;
+         float:right;
+         right:0px;
+         top:0px;
+         position:absolute;
+         width:500px;
+         height:980px;
+         visibility:visible;
+         }
+         #defaultimg{
+         left:-0px;
+         position:absolute;
+         visibility:visible;
+         top:-40px;
+         transition: 0.5s;
+         opacity:1;
+         z-index:2;
+         }
+         .findmovie{
+         color:white;
+         font-family:arial;
+         font-size:4em;
+         text-align:center;
+         position:absolute;
+         width:100%;
+         left:-5px;
+         top:240px;
+         line-height: 1.3em;
+         z-index:3;
+         }
+         .logoright{
+         position:absolute;
+         z-index:4;
+         left:+115px;
+         top:100px;
+         }
+         /*details panel*/
+         .detailsbar{
+         margin:0;
+         background-color: rgb(20,20,20);
+         padding:20px;
+         float:right;
+         right:0px;
+         top:0px;
+         position:absolute;
+         width:500px;
+         height:980px;
+         }
+         .imgdisplay{
+         top:100px;
+         position:relative;
+         }
+         .label{
+         color:white;
+         }
+         table{
+         position:relative;
+         right:20px;
+         float:right;
+         top:-10px;
+         left:-50px;
+         }
+         h1{
+         font-family:Trebuchet MS;
+         color:white;
+         margin:2px;
+         }
+         .info{
+         color:yellow;
+         }
+         .description{
+         color:white;
+         text-align: justify;
+         }
+         .descriptionnext{
+         color:white;
+         text-align: justify;
+         }
+         /*thumbnail grid*/
+         .outerbox{
+         top:200px;
+         left:0px;
+         position:absolute;
+         }
+         .innerbox{
+         display: flex;  
+         flex-wrap: wrap;
+         width: 70%;
+         float: left;
+         }
+         .img{
+         margin:15px;
+         transition: all 0.5s; 
+         float:left;
+         z-index:9;
+         }
+         .img:hover{
+         transform: scale(1.1);
+         }
+         .row{
+         position:relative;
+         float: left;
+         }
+         /*drop down menus*/
+         #select1{
+         position: absolute;
+         top: 100px;
+         left: 20px;
+         background-color:rgb(20,20,20);
+         color: yellow;
+         border-radius: 0px;
+         padding: 10px;
+         outline: none;
+         border: none;
+         font-size: 15px;
+         }
+         #select2{
+         position: absolute;
+         top: 100px;
+         left: 200px;
+         background-color:rgb(20,20,20);
+         color: yellow;
+         border-radius: 0px;
+         padding: 10px;
+         outline: none;
+         border: none;
+         font-size: 15px;
+         }
+         #reset{
+         position: absolute;
+         top: 100px;
+         left: 330px;
+         background-color:rgb(20,20,20);
+         color: yellow;
+         border-radius: 0px;
+         padding: 11px;
+         outline: none;
+         border: none;
+         font-size: 15px;
+         }
+         /*finmore button*/
+         .findmore{
+         font-family:bebas neue;
+         font-weight:bold;
+         position: absolute;
+         font-size:2em;
+         right:570px;
+         top: 100px;
+         }
+         .findmore a{
+         text-decoration:none;
+         color:black;
+         }
+      </style>
+      <link rel="stylesheet" href="main.css">
+      <link rel="shortcut icon" href="logo2.png">
+      <title>CineMagic Movies</title>
+   </head>
+   <body>
+      <div>
+      <!-- navigation bar -->
+      <div class="navibar" id="navbar">
+         <div class="navicontent">
+            <a href="home.html">HOME</a>
+            <a href="movies.html">MOVIES</a>
+            <a href="quiz.html">QUIZ</a>
+            <a href="contactus.html">CONTACT US</a>
+            <a href="aboutus.html">ABOUT US</a>
+            <div  class="shop">
+               <a href="store.html">STORE</a>
+            </div>
+         </div>
+         <div>
+            <a href="home.html"><img class="logo center" alt="logo" src="logo.png"  width="130" ></a>
+         </div>
+      </div>
+      <!-- background box -->
+      <div class="box1" id="box1">
+         <!-- dropdown menus --> 
+         <select id="select1">
+            <option value="">Background Colour</option>
+            <option value="red">RED</option>
+            <option value="green">GREEN</option>
+         </select>
+         <select id="select2">
+            <option value="">Font Colour</option>
+            <option value="red">RED</option>
+            <option value="green">GREEN</option>
+         </select>
+         <button class="" id="reset" >RESET</button>
+         <!-- find more button --> 
+         <div  class="findmore"><a href="#bottom">FIND MORE</a></div>
+         <!-- thumbnail grid --> 
+         <div class="outerbox">
+            <div class="innerbox">
+               <div class="row"> 
+                  <a class="img"> <img id="thumb1" src="Extraction.jpg" width="239px" ></a>
+                  <a class="img"><img id="thumb2" src="F9.jpg" width="239px" > </a>
+                  <a class="img"><img id="thumb3" src="SpencerNewNew.jpg" width="239px" > </a>
+               </div>
+               <div class="row"> 
+                  <a class="img"><img id="thumb4" src="sonic.jpg" width="239px" > </a>
+                  <a class="img"><img id="thumb5" src="EnolaHolmes.jpeg" width="239px" > </a>
+               </div>
+            </div>
+         </div>
+         <!-- details bar --> 
+         <div class="detailsbar">
+            <img src="extractionbox.jpeg" class="imgdisplay" id="mainImg" width="500px">
+            <div class="info imgdisplay">
+               <h1 id="moviename">EXTRACTION</h1>
+               <table>
+                  <tr>
+                     <th><img src="imdb.png" width="50px" > </th>
+                     <th><label name="imdb" id="imdb" class="label" >6.7</label></th>
+                  </tr>
+               </table>
+               <p id="catagory">2020 ‧ Action/Thriller ‧ 1h 57m</p>
+               <p class="description" id="description">A black-market mercenary who has nothing to lose is hired to rescue the kidnapped son of an imprisoned international crime lord. But in the murky underworld of weapons dealers and drug traffickers, an already deadly mission approaches the impossible.</p>
+               <p class="descriptionnext" id="descriptionnext">Extraction is a 2020 American action-thriller film starring Chris Hemsworth and released on Netflix. It is directed by Sam Hargrave (in his feature directorial debut) and written by Joe Russo, based on the graphic novel Ciudad by Ande Parks, Joe Russo, Anthony Russo, Fernando León González, and Eric Skillman. The film's cast also features Rudhraksh Jaiswal, Randeep Hooda, Golshifteh Farahani, Pankaj Tripathi and David Harbour, and follows a black ops mercenary who must rescue an Indian drug lord's kidnapped son in Dhaka, Bangladesh.</p>
+            </div>
+         </div>
+         <!-- default details bar --> 
+         <div id="defaultbox">
+            <img id="defaultimg" src="default.jpg" width="540px">
+            <div><a class="findmovie">Find<br>Your<br>Favourite<br>Movie<br>Here</a></div>
+            <div><img class="logoright" src="logo.png" width="300px"></div>
+         </div>
+         <div id="bottom"></div>
+      </div>
+      <!-- footer --> 
+      <footer>
+         <button class="button editor" onclick="window.location.href='dasith.html';" >PAGE EDITOR</button>
+      </footer>
+      <script>
+         // changing main image in details bar by clicking corresponding thumbnail
+         var thumb1 =  document.getElementById("thumb1");
+         var thumb2 =  document.getElementById("thumb2");
+         var thumb3 =  document.getElementById("thumb3");
+         var thumb4 =  document.getElementById("thumb4");
+         var thumb5 =  document.getElementById("thumb5");
+         thumb1.onclick = function(){
+         	document.getElementById("mainImg").src = "enew.jpeg";
+             document.getElementById("moviename").innerText  = "EXTRACTION";
+         	document.getElementById("catagory").innerText  = "2020 ‧ Action/Thriller ‧ 1h 57m";
+         	document.getElementById("imdb").innerText  = "6.7";
+         	document.getElementById("description").innerText  = "A black-market mercenary who has nothing to lose is hired to rescue the kidnapped son of an imprisoned international crime lord. But in the murky underworld of weapons dealers and drug traffickers, an already deadly mission approaches the impossible.";
+           document.getElementById("descriptionnext").innerText  = "Extraction is a 2020 American action-thriller film starring Chris Hemsworth and released on Netflix. It is directed by Sam Hargrave (in his feature directorial debut) and written by Joe Russo, based on the graphic novel Ciudad by Ande Parks, Joe Russo, Anthony Russo, Fernando León González, and Eric Skillman. The film's cast also features Rudhraksh Jaiswal, Randeep Hooda, Golshifteh Farahani, Pankaj Tripathi and David Harbour, and follows a black ops mercenary who must rescue an Indian drug lord's kidnapped son in Dhaka, Bangladesh.";
+             document.getElementById("defaultbox").style.visibility = "hidden";
+         	document.getElementById("defaultimg").style.opacity = "0";
+         	document.getElementById("defaultimg").style.visibility = "hidden";
+         	
+         }
+         thumb2.onclick = function(){
+         	document.getElementById("mainImg").src = "f9new.jpg";
+         		document.getElementById("moviename").innerText  = "F9";
+         		document.getElementById("catagory").innerText  = "2021 ‧ Action/Adventure ‧ 3h 8m";
+         		document.getElementById("imdb").innerText  = "6.5";
+         		document.getElementById("description").innerText  = "Dominic Toretto and his crew join forces to battle the most skilled assassin and high-performance driver they've ever encountered -- his forsaken brother.";
+             document.getElementById("descriptionnext").innerText  = "F9 (alternatively known as Fast & Furious 9) is an upcoming American action film directed by Justin Lin, who also co-wrote the screenplay with Daniel Casey. It is the sequel to The Fate of the Furious (2017), the ninth main installment, and the tenth full-length film released overall in the Fast & Furious franchise. The first film since Fast & Furious 6 (2013) to be directed by Lin and the first since 2 Fast 2 Furious (2003) not to be written by Chris Morgan, the film will star Vin Diesel, Michelle Rodriguez, Tyrese Gibson, Chris 'Ludacris' Bridges, John Cena, Jordana Brewster, Nathalie Emmanuel, Sung Kang, Helen Mirren, and Charlize Theron.";    
+               document.getElementById("defaultbox").style.visibility = "hidden";
+         		document.getElementById("defaultimg").style.opacity = "0"
+         		document.getElementById("defaultimg").style.visibility = "hidden";
+         		;
+         }
+         thumb3.onclick = function(){
+         	document.getElementById("mainImg").src = "spencernew.jpg";
+         		document.getElementById("moviename").innerText  = "Spenser Confidentia";
+         		document.getElementById("catagory").innerText  = "2020 ‧ Action/Crime ‧ 1h 51m";
+         		document.getElementById("imdb").innerText  = "6.2";
+         		document.getElementById("description").innerText  = "To unravel a twisted murder conspiracy, a former police detective returns to Boston's criminal underworld.";
+             document.getElementById("descriptionnext").innerText  = "Spenser Confidential is a 2020 American action comedy film[1] directed by Peter Berg and with a screenplay written by Sean O'Keefe and Brian Helgeland. The film stars Mark Wahlberg, Winston Duke, Alan Arkin, Iliza Shlesinger, Bokeem Woodbine, Donald Cerrone, Marc Maron, and Post Malone and marks the fifth collaboration between Wahlberg and Berg after Lone Survivor, Deepwater Horizon, Patriots Day, and Mile 22.";    
+               document.getElementById("defaultbox").style.visibility = "hidden";
+         		document.getElementById("defaultimg").style.opacity = "0"
+         		document.getElementById("defaultimg").style.visibility = "hidden";
+         }
+         thumb4.onclick = function(){
+         	document.getElementById("mainImg").src = "sonicnew.jpg";
+         		document.getElementById("moviename").innerText  = "Sonic the Hedgehog";
+         		document.getElementById("catagory").innerText  = "2020 ‧ Family/Comedy ‧ 1h 40m";
+         		document.getElementById("imdb").innerText  = "6.5";
+         		document.getElementById("description").innerText  = "An extraterrestrial hedgehog is discovered by a scientist with evil intentions and plans to use his superpowers for his selfish needs.";
+             document.getElementById("descriptionnext").innerText  = "Sonic the Hedgehog[b] is a 2020 action-adventure comedy film based on the video game franchise of the same name published by Sega. Directed by Jeff Fowler (in his feature directorial debut) and written by Pat Casey and Josh Miller, it stars Ben Schwartz and Jim Carrey, with James Marsden and Tika Sumpter also in starring roles. It is the first installment in a planned Sonic the Hedgehog film series. The film follows Sonic the Hedgehog (voiced by Schwartz), who runs supersonic speeds, teams up with local town sheriff Tom Wachowski (Marsden) to find his lost rings and escape the mad scientist Dr. Robotnik (Carrey).";    
+               document.getElementById("defaultbox").style.visibility = "hidden";
+         		document.getElementById("defaultimg").style.opacity = "0"
+         		document.getElementById("defaultimg").style.visibility = "hidden";
+         }
+         thumb5.onclick = function(){
+         	document.getElementById("mainImg").src = "enolaholmsnew.jpg";
+         		document.getElementById("moviename").innerText  = "Enola Holmes";
+         		document.getElementById("catagory").innerText  = "2020 ‧ Mystery/Adventure ‧ 2h 3m";
+         		document.getElementById("imdb").innerText  = "6.6";
+         		document.getElementById("description").innerText  = "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord";
+             document.getElementById("descriptionnext").innerText  = "Enola Holmes is a 2020 mystery film based on the first book in the young adult fiction series of the same name by Nancy Springer. The story is about the teenage sister of the already-famous Sherlock Holmes, who travels to London to find her missing mother but ends up on a thrilling adventure, pairing up with a runaway lord as they attempt to solve a mystery that threatens the entire country. The film is directed by Harry Bradbeer, from a screenplay by Jack Thorne. Millie Bobby Brown stars as the title character, while also serving as a producer on the film. Henry Cavill, Sam Claflin, and Helena Bonham Carter also star.";    
+               document.getElementById("defaultbox").style.visibility = "hidden";
+         		document.getElementById("defaultimg").style.opacity = "0"
+         		document.getElementById("defaultimg").style.visibility = "hidden";
+         }
+         
+         
+         // scroll function to hidding navigation bar
+         var prevpos = window.pageYOffset;
+         window.onscroll = function() {
+           var currpos = window.pageYOffset;
+           if (prevpos > currpos) {
+             document.getElementById("navbar").style.top = "0";
+         	
+           } else {
+             document.getElementById("navbar").style.top = "-80px";
+         
+         
+           }
+           prevpos = currpos;
+         }
+         
+         // event listners to change background color and text colors by dropdown menus
+         document.getElementById("select1").addEventListener('change',function(){
+         
+             if (document.getElementById("select1").value == 'red') {
+                 document.getElementById("box1").style.backgroundColor = "rgb(255, 0, 0, 0.8)";
+             }
+         	 if (document.getElementById("select1").value == 'green') {
+                 document.getElementById("box1").style.backgroundColor = "rgb(0, 200, 0, 0.8)";
+             }
+             else {
+                 document.body.style.backgroundColor = "red";
+             }
+         });
+         
+         document.getElementById("select2").addEventListener('change',function(){
+         
+             if (document.getElementById("select2").value == 'red') {
+                 document.getElementById("moviename").style.color = "rgb(255, 0, 0, 0.8)";
+         		document.getElementById("description").style.color = "rgb(255, 0, 0, 0.8)";
+             document.getElementById("descriptionnext").style.color = "rgb(255, 0, 0, 0.8)";
+         
+             }
+         	 if (document.getElementById("select2").value == 'green') {
+                  document.getElementById("moviename").style.color = "rgb(0, 200, 0, 0.8)";
+         		 document.getElementById("description").style.color ="rgb(0, 200, 0, 0.8)";
+              document.getElementById("descriptionnext").style.color ="rgb(0, 200, 0, 0.8)";
+         
+             }
+             
+         });
+         // reseting page to default
+         var resetbtn = document.getElementById("reset");
+         resetbtn.onclick = function() {
+              	document.getElementById("moviename").style.color = "white";
+         		document.getElementById("description").style.color = "white";
+             document.getElementById("descriptionnext").style.color = "white";
+             document.getElementById("box1").style.backgroundColor = "rgb(254, 231, 21, 0.8)";
+         		document.getElementById("select1").value = "";
+         		document.getElementById("select2").value = "";
+         		document.getElementById("defaultbox").style.visibility = "visible";
+         		document.getElementById("defaultimg").style.visibility = "visible";
+         		document.getElementById("defaultimg").style.opacity = "1"
+         			
+         		}
+      </script>
+   </body>
+</html>

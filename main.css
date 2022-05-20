@@ -1,0 +1,78 @@
+/*navigation bar styles*/
+.navibar {
+width:100%;
+position: fixed; 
+top: 0; 
+left: 0;
+transition: all 0.5s; 
+background: rgb(27,26,26);
+background: linear-gradient(90deg, rgba(27,26,26,1) 0%, rgba(0,0,0,1) 50%, rgba(27,26,26,1) 100%);
+z-index: 10;
+}
+.navicontent{
+margin-left: 20px;
+}
+.navicontent a { 
+font-family:bebas neue;
+font-size:20px;
+float: left;
+display: block;
+color: rgb(255,240,0);  
+text-align: center;
+padding: 20px 10px;
+text-decoration: none;
+}
+.navibar a:hover {
+color: white;
+transition: all 0.5s; 
+}
+.logo{
+left:45%;
+top:-5px;
+position: absolute;
+}
+.shop{
+float:right;
+margin-right:30px;
+}
+/*body styles*/
+body{
+margin:0;
+padding:0;
+background-image: url("back.jpg");
+background-repeat:no-repeat;
+background-size: 100%;
+background-attachment: fixed;   
+}
+/*button styles*/
+.button {
+background-color: transparent;
+border: 1px solid white;
+color: white;
+font-weight:bold;
+transition: all 0.5s; 
+outline: none;
+}
+.button:hover{
+background-color: rgb(255,240,0);
+color:black;
+border: 1px solid black;
+}
+.button:active {
+color:black;
+transition:0s;
+}
+/*footer*/
+footer {
+height:250px;
+background: rgb(27,26,26);
+background: linear-gradient(90deg, rgba(27,26,26,1) 0%, rgba(0,0,0,1) 50%, rgba(27,26,26,1) 100%);
+color: white;
+}
+.editor{
+padding: 20px 70px;
+font-size: 20px;
+left:39%;
+position:relative;
+top:+80px;
+}
